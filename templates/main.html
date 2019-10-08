@@ -2,16 +2,19 @@
 {% block content %}
     <body>
 
-    <h1>Welcome adventurer!</h1>
-    <div class="jumbotron">
-        <p>What you are about to witness is a collaborative effort of
+    <div id="main_menu">
+        <h1>Welcome adventurer!</h1>
+        <h3>What you are about to witness is a collaborative effort of
             three idiots plus an extra who had no better idea than
             this text adventure. Our adventure has a fantasy setting (duh),
             and is still just a demo version. Enjoy!
-        </p>
+        </h3>
+
+        <div id="start_button">
+            <a id="menu" href="{{ url_for('route_play_game') }}">
+                <img src="http://pixelartmaker.com/art/c0921cd2bd146c1.png">
+            </a>
+        </div>
     </div>
-    <a id="menu" href="{{ url_for('route_play_game') }}">
-        <img src="http://pixelartmaker.com/art/c0921cd2bd146c1.png">
-    </a>
     </body>
 {% endblock %}
