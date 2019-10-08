@@ -1,4 +1,14 @@
 {% extends "layout.html" %}
 {% block content %}
-
+    <h1>Welcome adventurer!</h1>
+    <div>
+        <p>What you are about to witness is a collaborative effort of
+            three idiots plus an extra who had no better idea than
+            this text adventure. Our adventure has a fantasy setting (duh),
+            and is still just a demo version. Enjoy!
+        </p>
+    </div>
+    <a href="{{ url_for('route_play_game') }}">
+        <img src="http://pixelartmaker.com/art/c0921cd2bd146c1.png">
+    </a>
 {% endblock %}
