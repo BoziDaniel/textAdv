@@ -2,7 +2,6 @@ function $(id) {
     return document.getElementById(id);
 }
 
-
 $(menu).addEventListener('click', play, false);
 
 function play() {
