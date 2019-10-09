@@ -1,7 +1,7 @@
 #start_background {
     background-image: url('../static/pictures/starting_page.png');
     height: 100%;
-     background-position: center;
+    background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -20,8 +20,6 @@ body, html {
     left: 30%;
 }
 
-
-
 #main_menu {
     background-image: url('../static/pictures/main_menu.jpg');
     height: 100%;
@@ -29,11 +27,22 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
+    overflow: hidden;
 }
 
 .str_text {
     background-color: black;
     color: white;
+}
+
+
+.death_text{
+    color: darkred;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    font-size: 40px;
 }
 
 h1 {
@@ -47,4 +56,3 @@ h3 {
 button {
     margin-right: 5px;
 }
-
