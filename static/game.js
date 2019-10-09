@@ -61,21 +61,9 @@ function town() {
     create_button('back', 'back', 'Leave');
     $('greet_normal').addEventListener('click', market, false);
     $('mom_joke').addEventListener("click", death_guard, false);
-    // $('mountain').addEventListener("click", mountain, false);
-    // $('mountain').addEventListener("click", mountain, false);
+    $('back').addEventListener('click', back_from_town_gate, false);
     // $('mountain').addEventListener("click", mountain, false);
 }
-
-function death_guard() {
-    document.body.style.backgroundImage = "url('../static/pictures/death.png')";
-    remove_all_buttons('remove');
-    remove_element('story_text');
-    create_paragraph('death', 'death_mnt', "Death by: A Stab wound to the stomach, I mean " +
-        "you made a joke about an armed guard's mother, what did you expect?");
-    create_button('try_again', 'try_again', 'Try again?');
-    $('try_again').addEventListener("click", try_again, false);
-}
-
 
 function back_to_town() {
     document.body.style.backgroundImage = "url('../static/pictures/gatekeeper_jency.png')";
@@ -88,7 +76,7 @@ function back_to_town() {
     create_button('back', 'back', 'Leave');
     $('greet_normal').addEventListener('click', market, false);
     $('mom_joke').addEventListener("click", death_guard, false);
-
+    $('back').addEventListener('click', back_from_town_gate, false);
 }
 
 
@@ -102,9 +90,30 @@ function market() {
     create_button('leave_town', 'leave', 'Leave town right now sir');
     $('leave').addEventListener('click', back_to_town, false);
     $('inn').addEventListener('click', inn, false);
-    $('vendors').addEventListener('click', function(e){
-        let message = document.createElement("div").setAttribute('class', 'alert alert-success' );
+    $('vendors').addEventListener('click', function (e) {
+        let message = document.createElement("div").setAttribute('class', 'alert alert-success');
     });
+}
+
+function death_guard() {
+    document.body.style.backgroundImage = "url('../static/pictures/death.png')";
+    remove_all_buttons('remove');
+    remove_element('story_text');
+    create_paragraph('death', 'death_mnt', "Death by: A Stab wound to the stomach, I mean " +
+        "you made a joke about an armed guard's mother, what did you expect?");
+    create_button('try_again', 'try_again', 'Try again?');
+    $('try_again').addEventListener("click", try_again, false);
+}
+
+function back_from_town_gate() {
+    document.body.style.backgroundImage = "url('../static/pictures/starting_page.png')";
+    $('story_text').innerText = 'You are at a crossroads of sort, blue sky, green field nothing out of the ordinary,' +
+            ' to your left in the distance you see a mountain, to your right, a town.';
+    remove_all_buttons('remove');
+    create_button('mountain', 'mountain', 'Go to mountain');
+    create_button('gate', 'gate', 'Go to town');
+    $('mountain').addEventListener("click", mountain, false);
+    $('gate').addEventListener('click', town, false);
 }
 
 function create_button(button_name, id_, message, common) {
@@ -135,20 +144,20 @@ function remove_element(id_) {
 
 function inn() {
     document.body.style.backgroundImage = "url('../static/pictures/tavern_drunk_dani.png')";
-    $('story_text').innerText='You entered a small inn, in the corner you can see a drunk guard with a strange device on his head,' +
+    $('story_text').innerText = 'You entered a small inn, in the corner you can see a drunk guard with a strange device on his head,' +
         ' next to him is the bard that is till playing that all so familiar tune.\n' +
         'The innkeeper shoots you a toothless smile.\n' +
         '‘What can I get you today?’';
-        remove_all_buttons('remove');
-        create_button('ask_work', 'work', 'Ask about work in the city.');
-        create_button('ask_ab_mountain', 'close_mountain', 'Ask about the mountain close by the city');
-        create_button('ask_pint', 'pint', 'Ask for a pint');
-        create_button('leave_inn', 'leave_inn_id', 'Leave and go back to the market');
-        $('leave_inn_id').addEventListener('click', market, false);
-        $('pint').addEventListener('click', function(e){
-             alert('You tried to ask a pint.The inn keep laughs at you, still brandishing his toothless smile. ' +
-        '‘Without money? That is a good joke.’')
-        });
+    remove_all_buttons('remove');
+    create_button('ask_work', 'work', 'Ask about work in the city.');
+    create_button('ask_ab_mountain', 'close_mountain', 'Ask about the mountain close by the city');
+    create_button('ask_pint', 'pint', 'Ask for a pint');
+    create_button('leave_inn', 'leave_inn_id', 'Leave and go back to the market');
+    $('leave_inn_id').addEventListener('click', market, false);
+    $('pint').addEventListener('click', function (e) {
+        alert('You tried to ask a pint.The inn keep laughs at you, still brandishing his toothless smile. ' +
+            '‘Without money? That is a good joke.’')
+    });
 };
 
 
