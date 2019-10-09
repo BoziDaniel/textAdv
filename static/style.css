@@ -42,6 +42,8 @@ body, html {
 .str_text {
     background-color: black;
     color: white;
+    font-size: 25px;
+    font-family: "Deja Vu Sans Mono";
 }
 
 .death_text{
@@ -49,7 +51,7 @@ body, html {
     text-align: center;
     position: absolute;
     top: 50%;
-    left: 10%;
+    left: 8%;
     font-size: 40px;
 }
 
