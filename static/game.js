@@ -60,11 +60,22 @@ function town() {
     create_button('mom_joke', 'mom_joke', 'Ignore his question and say an inappropriate joke about his mother');
     create_button('back', 'back', 'Leave');
     $('greet_normal').addEventListener('click', market, false);
-    // $('mountain').addEventListener("click", mountain, false);
+    $('mom_joke').addEventListener("click", death_guard, false);
     // $('mountain').addEventListener("click", mountain, false);
     // $('mountain').addEventListener("click", mountain, false);
     // $('mountain').addEventListener("click", mountain, false);
 }
+
+function death_guard() {
+    document.body.style.backgroundImage = "url('../static/pictures/death.png')";
+    remove_all_buttons('remove');
+    remove_element('story_text');
+    create_paragraph('death', 'death_mnt', "Death by: A Stab wound to the stomach, I mean " +
+        "you made a joke about an armed guard's mother, what did you expect?");
+    create_button('try_again', 'try_again', 'Try again?');
+    $('try_again').addEventListener("click", try_again, false);
+}
+
 
 function back_to_town() {
     document.body.style.backgroundImage = "url('../static/pictures/gatekeeper_jency.png')";
