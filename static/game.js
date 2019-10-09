@@ -5,14 +5,12 @@ function $(id) {
 // $ = document.getElementbyId(id)
 function main() {
     $('music').setAttribute('src', 'static/music/rivendell.mp3');
-    // $('music').play();
     $('mountain').addEventListener("click", mountain, false);
     $('gate').addEventListener('click', town, false);
 }
 
 function mountain() {
     $('music').setAttribute('src', 'static/music/Dragonforce.mp3');
-    // $('music').play();
     document.body.style.backgroundImage = "url('../static/pictures/mountain.jpg')";
     $('story_text').innerText = "You arrive at the foot of the mountain, you see a single road leading up," +
         " next to the road you see sign but you can’t quite make it out yet.\n";
@@ -27,7 +25,6 @@ function mountain() {
 
 function death_mountain() {
     $('music').setAttribute('src', 'static/music/death.mp3');
-    $('music').play();
     document.body.style.backgroundImage = "url('../static/pictures/death.png')";
     remove_all_buttons('remove');
     remove_element('story_text');
@@ -46,8 +43,7 @@ function try_again() {
 }
 
 function back_to_field() {
-    $('music').setAttribute('src', 'static/music/Dragonforce.mp3');
-    $('music').play();
+    $('music').setAttribute('src', 'static/music/rivendell.mp3');
     document.body.style.backgroundImage = "url('../static/pictures/starting_page.png')";
     $('story_text').innerText = 'You are at a crossroads of sort, blue sky, green field nothing out of the ordinary,' +
         ' to your left in the distance you see a mountain, to your right, a town.';
@@ -59,6 +55,10 @@ function back_to_field() {
 }
 
 function town() {
+    $('music').setAttribute('src', 'static/music/hello.mp3');
+    setTimeout(function () {
+        $('music').setAttribute('src', 'static/music/gate.mp3');
+    }, 2500);
     document.body.style.backgroundImage = "url('../static/pictures/gatekeeper_jency.png')";
     $('story_text').innerText = 'You arrive at the town, the gate is sealed shut and a single guard is standing at his post humming an unfamiliar tune. Upon realizing your approach you are promptly stopped by him.\n' +
         '‘You there! What business do you have in the city?’';
@@ -75,7 +75,6 @@ function town() {
 
 function death_guard() {
     $('music').setAttribute('src', 'static/music/death.mp3');
-    $('music').play();
     document.body.style.backgroundImage = "url('../static/pictures/death.png')";
     remove_all_buttons('remove');
     remove_element('story_text');
@@ -86,9 +85,11 @@ function death_guard() {
 }
 
 function market() {
+    $('music').setAttribute('src', 'static/music/market.mp3');
     document.body.style.backgroundImage = "url('../static/pictures/ricsi_Attila_market.png')";
-    $('story_text').innerText = 'You arrive at the town, the gate is sealed shut and a single guard is standing at his post humming an unfamiliar tune. Upon realizing your approach you are promptly stopped by him.\n' +
-        '‘You there! What business do you have in the city?’\n';
+    $('story_text').innerText = 'As you enter what it looks like the town’s slums, you see a flea market close by. ' +
+        'As you head there you see all sorts of vendors and an inn. From the inn you can hear a happy tune, and the ' +
+        'smell of fried eggs.’\n';
     remove_all_buttons('remove');
     create_button('vendors_check', 'vendors', 'Check one of the vendors');
     create_button('go_to_inn', 'inn', 'Go to the inn sir');
@@ -102,7 +103,6 @@ function market() {
 
 function inn() {
     $('music').setAttribute('src', 'static/music/tavern.mp3');
-    $('music').play();
     document.body.style.backgroundImage = "url('../static/pictures/tavern_drunk_dani.png')";
     $('story_text').innerText = 'You entered a small inn, in the corner you can see a drunk guard with a strange device on his head,' +
         ' next to him is the bard that is till playing that all so familiar tune.\n' +
