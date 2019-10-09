@@ -87,6 +87,8 @@ function back_to_town() {
     create_button('mom_joke', 'mom_joke', 'Ignore his question and say an inappropriate joke about his mother');
     create_button('back', 'back', 'Leave');
     $('greet_normal').addEventListener('click', market, false);
+    $('mom_joke').addEventListener("click", death_guard, false);
+
 }
 
 function market() {
