@@ -91,6 +91,7 @@ function back_to_town() {
 
 }
 
+
 function market() {
     document.body.style.backgroundImage = "url('../static/pictures/ricsi_Attila_market.png')";
     $('story_text').innerText = 'You arrive at the town, the gate is sealed shut and a single guard is standing at his post humming an unfamiliar tune. Upon realizing your approach you are promptly stopped by him.\n' +
@@ -100,9 +101,9 @@ function market() {
     create_button('go_to_inn', 'inn', 'Go to the inn sir');
     create_button('leave_town', 'leave', 'Leave town right now sir');
     $('leave').addEventListener('click', back_to_town, false);
-    $('vendors').addEventListener('click', function (e) {
-        let message = document.createparagraph("div").setAttribute('class', 'alert alert-success');
-        message.setAttribute()
+    $('inn').addEventListener('click', inn, false);
+    $('vendors').addEventListener('click', function(e){
+        let message = document.createElement("div").setAttribute('class', 'alert alert-success' );
     });
 }
 
@@ -132,10 +133,28 @@ function remove_element(id_) {
     delete_element.remove();
 }
 
+function inn() {
+    document.body.style.backgroundImage = "url('../static/pictures/tavern_drunk_dani.png')";
+    $('story_text').innerText='You entered a small inn, in the corner you can see a drunk guard with a strange device on his head,' +
+        ' next to him is the bard that is till playing that all so familiar tune.\n' +
+        'The innkeeper shoots you a toothless smile.\n' +
+        '‘What can I get you today?’';
+        remove_all_buttons('remove');
+        create_button('ask_work', 'work', 'Ask about work in the city.');
+        create_button('ask_ab_mountain', 'close_mountain', 'Ask about the mountain close by the city');
+        create_button('ask_pint', 'pint', 'Ask for a pint');
+        create_button('leave_inn', 'leave_inn_id', 'Leave and go back to the market');
+        $('leave_inn_id').addEventListener('click', market, false);
+        $('pint').addEventListener('click', function(e){
+             alert('You tried to ask a pint.The inn keep laughs at you, still brandishing his toothless smile. ' +
+        '‘Without money? That is a good joke.’')
+        });
+};
+
 
 function remove_all_buttons(class_) {
     let buttons = document.getElementsByClassName('remove');
     while (buttons[0]) {
         buttons[0].parentNode.removeChild(buttons[0])
     }
-}
+};
