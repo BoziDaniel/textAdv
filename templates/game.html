@@ -1,8 +1,11 @@
 {% extends "layout.html" %}
+{% block head %}
+    <script src="../static/game.js" defer></script>
+{% endblock %}
 {% block content %}
     <body id="start_background">
-    <div>
-        <p class="str_text" id="story_text">You are at a crossroads of sort, blue sky, green field nothing out of the
+    <div class="str_text">
+        <p id="story_text">You are at a crossroads of sort, blue sky, green field nothing out of the
             ordinary, to your left in the distance
             you
             see a mountain, to your right, a town.
@@ -11,8 +14,11 @@
             <br>
             <button id="gate" class="btn btn-info remove" type="button">Go to town</button>
         </p>
+        <a id="to_menu" class="" href="{{ url_for('route_main') }}">
+            <img id="back_to_menu" src="../static/pictures/main_menu_closed.png">
+        </a>
+        <audio id="music" src="" autoplay preload loop controls></audio>
     </div>
-    <audio id="music" src="" autoplay></audio>
     </body>
 
 {% endblock %}

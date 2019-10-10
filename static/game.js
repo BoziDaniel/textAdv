@@ -5,8 +5,18 @@ function $(id) {
 // $ = document.getElementbyId(id)
 function main() {
     $('music').setAttribute('src', 'static/music/rivendell.mp3');
+    $('back_to_menu').addEventListener("mouseover", open_door, false);
+    $('back_to_menu').addEventListener('mouseout', close_door, false);
     $('mountain').addEventListener("click", mountain, false);
     $('gate').addEventListener('click', town, false);
+}
+
+function open_door() {
+    $('back_to_menu').setAttribute('src', 'static/pictures/main_menu_open .png')
+}
+
+function close_door() {
+    $('back_to_menu').setAttribute('src', 'static/pictures/main_menu_closed.png')
 }
 
 function mountain() {
