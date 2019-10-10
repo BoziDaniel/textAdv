@@ -10,8 +10,18 @@ function ElementId(id) {
 
 function main() {
     ElementId('music').setAttribute('src', 'static/music/rivendell.mp3');
+    ElementId('back_to_menu').addEventListener("mouseover", open_door, false);
+    ElementId('back_to_menu').addEventListener('mouseout', close_door, false);
     ElementId('mountain').addEventListener("click", mountain, false);
     ElementId('gate').addEventListener('click', town, false);
+}
+
+function open_door() {
+    ElementId('back_to_menu').setAttribute('src', 'static/pictures/main_menu_open .png')
+}
+
+function close_door() {
+    ElementId('back_to_menu').setAttribute('src', 'static/pictures/main_menu_closed.png')
 }
 
 function mountain() {
@@ -129,8 +139,32 @@ function inn() {
     create_button('leave_inn', 'leave_inn_id', 'Leave and go back to the market');
     ElementId('leave_inn_id').addEventListener('click', market, false);
     ElementId('pint').addEventListener('click', function (e) {
-        alert('You tried to ask a pint.The inn keep laughs at you, still brandishing his toothless smile. ' +
-            '‘Without money? That is a good joke.’')
+        let alertbox = document.getElementById('alertbox');
+        alertbox.removeAttribute('hidden');
+        alertbox.innerText = 'You tried to ask a pint.The inn keep laughs at you, still brandishing his toothless smile. ' +
+            '‘Without money? That is a good joke.';
+        setTimeout(function(e){
+            alertbox.setAttribute('hidden', true)
+        }, 3500)
+
+    });
+    ElementId('close_mountain').addEventListener('click', function (e) {
+        let alertbox = document.getElementById('alertbox');
+        alertbox.removeAttribute('hidden');
+        alertbox.innerText = 'The mountain is very dangerous adventurer, i recommend u to try a less harder quest.';
+        setTimeout(function(e){
+            alertbox.setAttribute('hidden', true)
+        }, 3500)
+
+    });
+
+     ElementId('work').addEventListener('click', function (e) {
+         let alertbox = document.getElementById('alertbox');
+        alertbox.removeAttribute('hidden');
+        alertbox.innerText = 'Reach level 5 to go to work';
+        setTimeout(function(e){
+            alertbox.setAttribute('hidden', true)
+        }, 3500)
     });
 }
 
@@ -158,7 +192,7 @@ function create_paragraph(paragraph_name, id_, message) {
 
 
 function hide(){
-    let alertbox = document.getElementById('alertbox');
+    let alertbox = ElementId('alertbox');
     alertbox.innerText = 'Get OUT of here scum! SCRAM to the inn or leave town!'
     alertbox.removeAttribute('hidden');
     alertbox.removeAttribute('alert-info');
@@ -166,7 +200,7 @@ function hide(){
     setTimeout(hidenow, 3500);
 }
 function hidenow(){
-    let alertbox = document.getElementById('alertbox');
+    let alertbox = ElementId('alertbox');
     alertbox.setAttribute('hidden', true)
 }
 
@@ -177,6 +211,10 @@ function alertMessage(message){
         setTimeout(hide, 3500)
 }
 
+function remove_element(id_) {
+    let delete_element = ElementId(id_);
+    delete_element.remove();
+}
 
 function remove_all_buttons(class_) {
     let buttons = document.getElementsByClassName('remove');
