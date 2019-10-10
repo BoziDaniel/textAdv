@@ -70,7 +70,12 @@ function town() {
     $('greet_normal').addEventListener('click', market, false);
     $('mom_joke').addEventListener("click", death_guard, false);
     $('back').addEventListener('click', back_to_field, false);
+    $('greet_witty').addEventListener('click', bitchslapped_by_guard, false);
     // $('mountain').addEventListener("click", mountain, false);
+}
+
+function bitchslapped_by_guard(){
+    alert("The guard backhands you. ‘Don’t get smart with me! Go on in get out of my sight!");
 }
 
 function death_guard() {
