@@ -90,14 +90,16 @@ function town() {
     ElementId('greet_normal').addEventListener('click', market, false);
     ElementId('mom_joke').addEventListener("click", death_guard, false);
     ElementId('back').addEventListener('click', back_to_field, false);
-    ElementId('greet_witty').addEventListener('click', bitchslapped_by_guard, false);
+    ElementId('greet_witty').addEventListener('click', function (e) {
+        let alertbox = document.getElementById('alertbox');
+        alertbox.removeAttribute('hidden');
+        alertbox.innerText = 'The guard backhands you. ‘Don’t get smart with me! Go on in get out of my sight!';
+        setTimeout(function(e){
+            alertbox.setAttribute('hidden', true)
+        }, 3500)
+    });
 }
 
-
-
-function bitchslapped_by_guard(){
-    alert("The guard backhands you. ‘Don’t get smart with me! Go on in get out of my sight!");
-}
 
 function death_guard() {
     ElementId('music').setAttribute('src', 'static/music/death.mp3');
