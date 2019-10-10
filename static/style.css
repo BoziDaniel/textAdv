@@ -1,10 +1,11 @@
 #start_background {
     background-image: url('../static/pictures/starting_page.png');
     height: 100%;
-     background-position: center;
+    background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 
 html {
     height: 100%;
@@ -12,15 +13,22 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
 }
+#try_again{
+    background-color: darkred;
+    border-color: red;
+    text-align: center;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+
+}
 
 #start_button {
     text-align: center;
     position: absolute;
-    top: 70%;
-    left: 30%;
+    top: 70vh;
+    left: 40vw;
 }
-
-
 
 #main_menu {
     background-image: url('../static/pictures/main_menu.jpg');
@@ -29,11 +37,23 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
+    overflow: hidden;
 }
 
 .str_text {
     background-color: black;
     color: white;
+    font-size: 25px;
+    font-family: "Deja Vu Sans Mono";
+}
+
+.death_text{
+    color: darkred;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    font-size: 40px;
 }
 
 h1 {
@@ -60,8 +80,5 @@ button {
     margin-left: 50%;
     position: absolute;
       bottom: 30px;
-
-
-
 }
 
