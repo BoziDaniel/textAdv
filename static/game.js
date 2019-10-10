@@ -6,8 +6,6 @@ function ElementId(id) {
     return document.getElementById(id);
 }
 
-
-
 function main() {
     ElementId('music').setAttribute('src', 'static/music/rivendell.mp3');
     ElementId('back_to_menu').addEventListener("mouseover", open_door, false);
@@ -33,9 +31,15 @@ function mountain() {
     create_button('cross_mon', 'mount', 'Try to cross the mountain');
     create_button('read_sign', 'sign', 'Read the sign');
     create_button('back', 'back', 'Back to field');
-
     ElementId('mount').addEventListener('click', death_mountain, false);
-    ElementId('sign').addEventListener("click", read_sign, false);
+    ElementId('sign').addEventListener("click", function (e) {
+        let alertbox = document.getElementById('alertbox');
+        alertbox.removeAttribute('hidden');
+        alertbox.innerText = 'Mount Killaraus, do not try to cross without proper preparations!';
+        setTimeout(function(e){
+            alertbox.setAttribute('hidden', true)
+        }, 3500)
+    });
     ElementId('back').addEventListener("click", back_to_field, false);
 }
 
@@ -151,7 +155,7 @@ function inn() {
     ElementId('close_mountain').addEventListener('click', function (e) {
         let alertbox = document.getElementById('alertbox');
         alertbox.removeAttribute('hidden');
-        alertbox.innerText = 'The mountain is very dangerous adventurer, i recommend u to try a less harder quest.';
+        alertbox.innerText = 'The mountain has a history of trapping explorers and people finding their bodies years later, I recommend taking an easier path.';
         setTimeout(function(e){
             alertbox.setAttribute('hidden', true)
         }, 3500)
@@ -161,7 +165,7 @@ function inn() {
      ElementId('work').addEventListener('click', function (e) {
          let alertbox = document.getElementById('alertbox');
         alertbox.removeAttribute('hidden');
-        alertbox.innerText = 'Reach level 5 to go to work';
+        alertbox.innerText = 'In order to work in the city you must pay upfront 70 gold coins, you look like a homeless person, I doubt you have money on you sadly';
         setTimeout(function(e){
             alertbox.setAttribute('hidden', true)
         }, 3500)

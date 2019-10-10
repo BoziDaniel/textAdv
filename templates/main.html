@@ -1,7 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
     <body id="main_menu">
-
     <div>
         <h1>Welcome adventurer!</h1>
         <h3>What you are about to witness is a collaborative effort of
@@ -9,12 +8,12 @@
             this text adventure. Our adventure has a fantasy setting (duh),
             and is still just a demo version. Enjoy!
         </h3>
-
         <div id="start_button">
             <a id="menu" href="{{ url_for('route_play_game') }}">
                 <img src="http://pixelartmaker.com/art/c0921cd2bd146c1.png">
             </a>
         </div>
     </div>
+    <audio id="music" src="../static/music/main_menu.mp3" autoplay></audio>
     </body>
 {% endblock %}
