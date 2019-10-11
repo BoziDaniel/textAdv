@@ -4,28 +4,30 @@
 {% endblock %}
 {% block content %}
     <body id="start_background">
-
-
-    <div>
-        <p class="str_text" id="story_text">You are at a crossroads of sort, blue sky, green field nothing out of the
-            ordinary, to your left in the distance
-            you
-            see a mountain, to your right, a town.
-            <br>
-            <button id="mountain" class="btn btn-info remove" type="button">Go to mountain</button>
-            <br>
-            <button id="gate" class="btn btn-info remove" type="button">Go to town</button>
-        </p>
-        <a id="to_menu" class="" href="{{ url_for('route_main') }}">
-            <img id="back_to_menu" src="../static/pictures/main_menu_closed.png">
-        </a>
-        <audio id="music" src="" autoplay preload loop></audio>
+    <div class="str_text">
         <div class="row align-items-center" id="container">
             <div class="align-content-sm-center">
                 <div id="alertbox" class="alert alert-info text-center font-weight-bold" hidden role="alert"></div>
             </div>
         </div>
+        <p id="story_text">You are at a crossroads of sort, blue sky, green field nothing out of the
+            ordinary, to your left in the distance
+            you
+            see a mountain, to your right, a town.
+        </p>
+        <a id="to_menu" class="exit" href="{{ url_for('route_main') }}">
+            <img id="back_to_menu" src="../static/pictures/main_menu_closed.png">
+        </a>
+
     </div>
+    <div class="str_text" id="show_buttons">
+        <button id="mountain" class="btn remove" type="button">Go to mountain</button>
+        <button id="gate" class="btn remove" type="button">Go to town</button>
+    </div>
+
+    <audio id="music" src="" autoplay preload loop></audio>
+
+
     </body>
 
 {% endblock %}

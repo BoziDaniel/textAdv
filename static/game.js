@@ -93,7 +93,7 @@ function town() {
     ElementId('greet_witty').addEventListener('click', function (e) {
         let alertbox = document.getElementById('alertbox');
         alertbox.removeAttribute('hidden');
-        alertbox.innerText = 'The guard backhands you. ‘Don’t get smart with me! Go on in get out of my sight!';
+        alertbox.innerText = 'The guard backhands you. "Don’t get smart with me! Go on in get out of my sight!"';
         setTimeout(function(e){
             alertbox.setAttribute('hidden', true)
         }, 3500)
@@ -147,8 +147,8 @@ function inn() {
     ElementId('pint').addEventListener('click', function (e) {
         let alertbox = document.getElementById('alertbox');
         alertbox.removeAttribute('hidden');
-        alertbox.innerText = 'You tried to ask a pint.The inn keep laughs at you, still brandishing his toothless smile. ' +
-            '‘Without money? That is a good joke.';
+        alertbox.innerText = 'You ask for a pint. The inn keep laughs at you, still brandishing his toothless smile. ' +
+            '"Without money? That is a good joke."';
         setTimeout(function(e){
             alertbox.setAttribute('hidden', true)
         }, 3500)
@@ -179,8 +179,8 @@ function create_button(button_name, id_, message) {
     button_name = document.createElement("button");
     button_name.setAttribute("id", id_);
     text_message = document.createTextNode(message);
-    let parent = ElementId("start_background");
-    button_name.setAttribute('class', 'btn btn-info remove');
+    let parent = ElementId("show_buttons");
+    button_name.setAttribute('class', 'btn remove');
     button_name.setAttribute('type', 'button');
     button_name.appendChild(text_message);
     parent.appendChild(button_name);
@@ -199,7 +199,7 @@ function create_paragraph(paragraph_name, id_, message) {
 
 function hide(){
     let alertbox = ElementId('alertbox');
-    alertbox.innerText = 'Get OUT of here scum! SCRAM to the inn or leave town!'
+    alertbox.innerText = 'Get OUT of here scum! SCRAM to the inn or leave town!';
     alertbox.removeAttribute('hidden');
     alertbox.removeAttribute('alert-info');
     alertbox.setAttribute('class', ' alert alert-warning font-weight-bold ');
