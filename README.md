@@ -42,9 +42,9 @@ python3 server.py
 * Flask
 
 ## Authors
-* Bozi Dániel,
-* McFerren Attila,
-* Vuong Tan Quang Richard,
+* Bozi Dániel
+* McFerren Attila
+* Vuong Tan Quang Richard
 * Jeneses Dávid
 
 ## Contacts
